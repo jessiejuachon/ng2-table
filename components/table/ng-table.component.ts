@@ -22,8 +22,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
           <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}"
                  [ngTableFiltering]="column.filtering"
                  class="form-control"
-                 style="width: auto;"
-                 (tableChanged)="onChangeTable(config)"/>
+                 style="width: 100%;"
+                 (tableChanged)="onChangeTable(config)"
+                 value="{{column.filtering.filterString}}"
+                 />
         </td>
       </tr>
         <tr *ngFor="let row of rows">
